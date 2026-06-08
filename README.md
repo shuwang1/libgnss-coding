@@ -1,6 +1,6 @@
 # Libgnss_Coding
 
-[![Swift](https://img.shields.io/badge/Swift-6.0-orange.svg)](https://swift.org)
+[![CI](https://github.com/shuwang1/Orientable-libgnss-coding/actions/workflows/ci.yml/badge.svg)](https://github.com/shuwang1/Orientable-libgnss-coding/actions/workflows/ci.yml)
 [![Platform](https://img.shields.io/badge/Platforms-macOS%20%7C%20iOS%20%7C%20Linux%20%7C%20Windows-lightgrey.svg)]()
 
 A high-performance Swift library for GNSS-related coding and parity check algorithms, based on the robust `libgnss-coding` C library.
