@@ -1,6 +1,6 @@
 # Libgnss_Coding
 
-[![CI](https://github.com/shuwang1/Orientable-libgnss-coding/actions/workflows/ci.yml/badge.svg)](https://github.com/shuwang1/Orientable-libgnss-coding/actions/workflows/ci.yml)[![codecov](https://codecov.io/github/shuwang1/libgnss-coding/graph/badge.svg?token=O8FK48JH03)](https://codecov.io/github/shuwang1/libgnss-coding)[![pages-build-deployment](https://github.com/shuwang1/Orientable-libgnss-coding/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/shuwang1/Orientable-libgnss-coding/actions/workflows/pages/pages-build-deployment)
+[![CI](https://github.com/shuwang1/Orientable-libgnss-coding/actions/workflows/ci.yml/badge.svg)](https://github.com/shuwang1/Orientable-libgnss-coding/actions/workflows/ci.yml)[![codecov](https://codecov.io/github/shuwang1/libgnss-coding/graph/badge.svg?token=O8FK48JH03)](https://codecov.io/github/shuwang1/libgnss-coding)[![Codacy Badge](https://app.codacy.com/project/badge/Grade/ec8af73c28524219afae63c5035e8dc1)](https://app.codacy.com/gh/shuwang1/libgnss-coding/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)[![pages-build-deployment](https://github.com/shuwang1/Orientable-libgnss-coding/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/shuwang1/Orientable-libgnss-coding/actions/workflows/pages/pages-build-deployment)
 
 A high-performance Swift library for GNSS-related coding and parity check algorithms, based on the robust `libgnss-coding` C library.
 
