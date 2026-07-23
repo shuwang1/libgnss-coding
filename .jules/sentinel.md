@@ -1,0 +1,4 @@
+## 2024-07-23 - [Thread-Safety Vulnerability in Global Logger]
+**Vulnerability:** The `GNSSLogger` singleton is marked `@unchecked Sendable` but exposes mutable `logLevel` and `callback` properties without synchronization, leading to potential data races across threads.
+**Learning:** Marking a class as `@unchecked Sendable` bypasses Swift's concurrency checks, leaving thread safety entirely up to manual implementation. In a library meant to process high-performance streams, this is a critical flaw.
+**Prevention:** Always use appropriate synchronization mechanisms (like `NSLock` or actors) for mutable shared state, especially in singletons. Do not use `@unchecked Sendable` without guaranteeing manual safety.
