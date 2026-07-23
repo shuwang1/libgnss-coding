@@ -64,6 +64,31 @@ struct Libgnss_CodingTests {
         #expect(result == nil)
     }
     
+    // MARK: - Logging Tests
+
+    @Test("Logger basic test")
+    func testLogger() {
+        GNSSLogger.shared.logLevel = .trace
+        var loggedMessages = [(GNSSLogLevel, String)]()
+        GNSSLogger.shared.callback = { level, message in
+            loggedMessages.append((level, message))
+        }
+
+        GNSS_LOGE("Error message")
+        GNSS_LOGW("Warn message")
+        GNSS_LOGI("Info message")
+        GNSS_LOGD("Debug message")
+        GNSS_LOGT("Trace message")
+
+        #expect(loggedMessages.count == 5)
+        #expect(loggedMessages[0].0 == .error)
+        #expect(loggedMessages[0].1 == "Error message")
+
+        // Reset state
+        GNSSLogger.shared.logLevel = .error
+        GNSSLogger.shared.callback = nil
+    }
+
     @Test("Hamming Checksum Verification (V0 & V1)")
     func calcChecksumGPSSubframe() {
         let sbfmWord: UInt32 = 0x22C00100
