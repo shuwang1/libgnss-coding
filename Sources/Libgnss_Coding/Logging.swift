@@ -24,13 +24,45 @@ public final class GNSSLogger: @unchecked Sendable {
     
     public static let shared = GNSSLogger()
     
-    public var logLevel: GNSSLogLevel = .error
-    public var callback: LogCallback?
+    private let lock = NSLock()
+    private var _logLevel: GNSSLogLevel = .error
+    private var _callback: LogCallback?
+
+    public var logLevel: GNSSLogLevel {
+        get {
+            lock.lock()
+            defer { lock.unlock() }
+            return _logLevel
+        }
+        set {
+            lock.lock()
+            defer { lock.unlock() }
+            _logLevel = newValue
+        }
+    }
+
+    public var callback: LogCallback? {
+        get {
+            lock.lock()
+            defer { lock.unlock() }
+            return _callback
+        }
+        set {
+            lock.lock()
+            defer { lock.unlock() }
+            _callback = newValue
+        }
+    }
     
     private init() {}
     
     public func log(_ level: GNSSLogLevel, _ message: String) {
-        guard level <= logLevel, let callback = callback else { return }
+        lock.lock()
+        let currentLogLevel = _logLevel
+        let currentCallback = _callback
+        lock.unlock()
+
+        guard level <= currentLogLevel, let callback = currentCallback else { return }
         callback(level, message)
     }
     
