@@ -72,7 +72,7 @@ struct Libgnss_CodingTests {
     func testLoggerCallbackAssignment() {
         GNSSLogger.shared.logLevel = .trace
 
-        GNSSLogger.shared.callback = { level, message in
+        GNSSLogger.shared.callback = { _, _ in
             // Dummy callback
         }
 
